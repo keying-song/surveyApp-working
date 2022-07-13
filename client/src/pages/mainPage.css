@@ -1,0 +1,31 @@
+.mainContainer{
+
+    text-align: center;
+}
+.top{
+    margin-top: 30px;
+    padding: 5px;
+}
+.bgimg{
+    width: 50%;
+    opacity: 0.5;
+
+}
+.buttons >Button{
+  color: black;
+  width: 400px;
+}
+
+.cardConainer 
+ {
+
+    display: flex;
+    justify-content : space-around;
+    margin-bottom: 50px;
+    margin-top: 10px;
+
+
+}
+.buttonleft{
+    background-color: #efdc75;
+}

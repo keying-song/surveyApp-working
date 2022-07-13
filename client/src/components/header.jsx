@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Navb() {
  
     return (
-        <Navbar bg="primary" variant="dark" expand="lg">
+        <Navbar className="navb" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="/home">
           <img
@@ -22,7 +22,7 @@ function Navb() {
               
               <Nav.Link href="/login">Login</Nav.Link>
              
-              <Nav.Link href="/register">Register</Nav.Link>
+              <Nav.Link href="/allsurvey">My Surveys</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         

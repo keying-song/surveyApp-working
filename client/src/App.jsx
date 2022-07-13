@@ -8,6 +8,7 @@ import Register from "./pages/register";
 import Adduser from './pages/addusers';
 import AllUser from './pages/alluser';
 import Edituser from './pages/edituser';
+import AllSurveys from './pages/allsurveys';
 
 //import Mainpage from './pages/mainpage';
 function App() {
@@ -29,8 +30,11 @@ function App() {
         <Route path='/alluser'>
             <AllUser />
         </Route>
-        <Route path='/edituser:id'>
+        <Route path='/edituser/:id'>
             <Edituser />
+        </Route>
+        <Route path='/allsurvey'>
+            <AllSurveys />
         </Route>
        <Route path='/'>
             <Mainpage/>

@@ -1,7 +1,6 @@
-
 import{useEffect, useState} from 'react'
 import {Table, TableBody, TableRow, TableHead, TableCell, styled, Button} from "@mui/material";
-import{getUser} from'../service/api.js';
+import{getSurvey} from'../service/api.js';
 import{Link} from 'react-router-dom';
 
 const StyledTable = styled(Table)`
@@ -9,14 +8,16 @@ const StyledTable = styled(Table)`
     margin:2em auto 0 auto;
 `
 const Thead = styled(TableRow)`
-    background: #000000;
+    background: #efdc75;
+   
     & > th{
-        color:#fff;
+         color:#015684;
+         font-weight:bold;
         font-size:20px;
     }
 `
 const Tbody =styled(TableRow)`
-    &>td{
+client/src/pages/edituser.jsx    &>td{
         font-size:20px;
     }
 `
@@ -24,16 +25,16 @@ const Tbody =styled(TableRow)`
 
 
 
-const AllUsers = ()=>{
-    const [users, setUsers]=useState([]);
+const AllSurveys = ()=>{
+    const [surveys, setSurveys]=useState([]);
   
 
     useEffect(()=>{
-        getAllUsers();
+        getAllSurveys();
     }, []);
-    const getAllUsers = async()=>{
-      let response =  await getUser();
-      setUsers(response.data);
+    const getAllSurveys = async()=>{
+      let response =  await getSurvey();
+      setSurveys(response.data);
       //console.log(response.data);
     }
 
@@ -41,24 +42,24 @@ const AllUsers = ()=>{
         <StyledTable>
             <TableHead>
                 <Thead>
-                    <TableCell>Id</TableCell>
-                    <TableCell>name</TableCell>
-                    <TableCell>phone</TableCell>
-                    <TableCell>email</TableCell>
+                    <TableCell>Survey Id</TableCell>
+                    <TableCell>Survey Name</TableCell>
+                    <TableCell>Created Date</TableCell>
+                    <TableCell></TableCell>
                     <TableCell></TableCell>
                     
                 </Thead>
             </TableHead>
             <TableBody>
                 {
-                    users.map(user=>(
+                    surveys.map(survey=>(
                         <Tbody>
-                            <TableCell>{user._id}</TableCell>
-                            <TableCell>{user.name}</TableCell>
-                            <TableCell>{user.phone}</TableCell>
-                            <TableCell>{user.email}</TableCell>
+                            <TableCell>{survey._id}</TableCell>
+                            <TableCell>{survey.name}</TableCell>
+                            <TableCell>{survey.date}</TableCell>
+                           
                             <TableCell>
-                                <Button variant ="contained" style={{marginRight:10}} component={Link} to={`/edituser/${user._id}`}>Edit</Button>
+                                <Button variant ="contained" style={{marginRight:10}} component={Link}>Edit</Button>
                                 <Button variant = "contained" color="secondary" >Delete</Button>
                             </TableCell>
                         </Tbody>
@@ -74,4 +75,4 @@ const AllUsers = ()=>{
 
     )
 }
-export default AllUsers;
+export default AllSurveys;
