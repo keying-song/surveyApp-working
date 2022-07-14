@@ -22,7 +22,7 @@ function Mainpage() {
             </h1>
             <h3>Create & Collect</h3>
 
-            <div>This is explanation section</div>
+            <div>This is explanation section git connect</div>
             <img src={bgImg} alt="" className="bgimg" />
          </div>
          <div className="buttons">
@@ -69,4 +69,3 @@ function Mainpage() {
    );
 }
 export default Mainpage;
-  
