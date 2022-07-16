@@ -4,21 +4,22 @@ const Schema = mongoose.Schema;
 
 // create a schema for collection
 const SurveySchema = new Schema({
-    surveyId: Number,
-    title: String,
-    question: String,
-    created: {
+    name: String,
+    owner: String,
+    surveyId: Schema.Types.ObjectId,
+    questionArray: [String],
+    isActive: Boolean,
+    startDate: {
         type: Date,
         default: Date.now()
     },
-    update: {
+    endDate: {
         type: Date,
-        default: Date.now()
     }
 },
 {
     collection: "surveys"
 });
 
-const Model = mongoose.model('survey', SurveySchema);
+const Model = mongoose.model('Survey', SurveySchema);
 export default Model;

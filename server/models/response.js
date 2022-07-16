@@ -3,25 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// import mongoose
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
-// create a schema for collection
-const SurveySchema = new Schema({
-    name: String,
-    owner: String,
+const ResponseSchema = new Schema({
+    questionId: Schema.Types.ObjectId,
+    optionId: Schema.Types.ObjectId,
     surveyId: Schema.Types.ObjectId,
-    questionArray: [String],
-    isActive: Boolean,
-    startDate: {
-        type: Date,
-        default: Date.now()
-    },
-    endDate: {
-        type: Date,
-    }
+    value: String
 }, {
-    collection: "surveys"
+    collection: "response"
 });
-const Model = mongoose_1.default.model('Survey', SurveySchema);
+const Model = mongoose_1.default.model('Response', ResponseSchema);
 exports.default = Model;
